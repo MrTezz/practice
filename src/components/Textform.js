@@ -6,11 +6,43 @@ export default function Textform() {
         console.log("Handle On Change");
         setText(event.target.value);
     }
+
     const handleUpClick = () =>{
         console.log("Change case clicked");
         let newText = text.toUpperCase();
         setText(newText);
     }
+
+    const handleLoClick = () => {
+    let newText = text.toLowerCase();
+    setText(newText);
+    }
+    const handleCapitalizeClick = () => {
+      let newText = text
+        .toLowerCase()
+        .split(" ")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+      setText(newText);
+    }
+    const handleSentenceCaseClick = () => {
+      let newText = text
+        .toLowerCase() // make everything lowercase first
+        .split(". ")   // split sentences by ". "
+        .map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1))
+        .join(". ");
+      setText(newText);
+    }
+
+    const handleRemoveSpacesClick = () => {
+  let newText = text.split(/[ ]+/).join(" ");
+  setText(newText.trim());
+}
+    const handleClearClick = () => {
+  setText("");
+}
+
+
 
 
   return (
@@ -18,8 +50,18 @@ export default function Textform() {
     <div className="container mt-5">
         <div className="form-floating">
         <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: "300px" }} value={text} onChange={handleOnChange}></textarea>
-        <button className="btn btn-primary mt-3" type="submit" onClick={handleUpClick}>Change Case</button>
+        <button className="btn btn-primary mt-3 me-2" type="submit" onClick={handleUpClick}>Uppercase</button>
+        <button className="btn btn-primary mt-3 me-2" onClick={handleLoClick}>Lowercase</button>
+        <button className="btn btn-primary mt-3 me-2" onClick={handleCapitalizeClick}>Capitalize Words</button>
+        <button className="btn btn-primary mt-3 me-2" onClick={handleSentenceCaseClick}>Sentence Case</button>
+        <button className="btn btn-primary mt-3 me-2" onClick={handleRemoveSpacesClick}>Remove Extra Spaces</button>
+        <button className="btn btn-danger mt-3" onClick={handleClearClick}>Clear Text</button>
+
         </div>
+    </div>
+    <div className="container my-5">
+      <h2>Text Summary</h2>
+      <p>{text.split(" ").length} words and {text.length} characters.</p>
     </div>
     </>
   )
