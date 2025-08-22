@@ -42,7 +42,16 @@ export default function Textform() {
   setText("");
 }
 
+    const totalTime = 0.008 * text.split(/\s+/).length;
+    const minutes = Math.floor(totalTime);
+    const seconds = Math.round((totalTime - minutes) * 60);
 
+    let readingTime = "";
+    if (minutes > 0){
+      readingTime = `${minutes} Min ${seconds} Sec`;
+    } else {
+      readingTime = `${seconds} Sec`;  
+    }
 
 
   return (
@@ -60,8 +69,11 @@ export default function Textform() {
         </div>
     </div>
     <div className="container my-5">
-      <h2>Text Summary</h2>
-      <p>{text.split(" ").length} words and {text.length} characters.</p>
+      <h2 className='mb-4'>Text Summary</h2>
+      <p><b>Count:</b> {text.split(/\s+/).length} words and {text.length} characters.</p>
+      
+      
+      <p><b>Reading Time:</b> {readingTime}</p>
     </div>
     </>
   )
