@@ -59,12 +59,12 @@ export default function Textform() {
     <div className="container mt-5">
         <div className="form-floating">
         <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: "300px" }} value={text} onChange={handleOnChange}></textarea>
-        <button className="btn btn-primary mt-3 me-2" type="submit" onClick={handleUpClick}>Uppercase</button>
-        <button className="btn btn-primary mt-3 me-2" onClick={handleLoClick}>Lowercase</button>
-        <button className="btn btn-primary mt-3 me-2" onClick={handleCapitalizeClick}>Capitalize Words</button>
-        <button className="btn btn-primary mt-3 me-2" onClick={handleSentenceCaseClick}>Sentence Case</button>
-        <button className="btn btn-primary mt-3 me-2" onClick={handleRemoveSpacesClick}>Remove Extra Spaces</button>
-        <button className="btn btn-danger mt-3" onClick={handleClearClick}>Clear Text</button>
+        <button className="btn btn-outline-primary mt-3 me-2" type="submit" onClick={handleUpClick}>Uppercase</button>
+        <button className="btn btn-outline-primary mt-3 me-2" onClick={handleLoClick}>Lowercase</button>
+        <button className="btn btn-outline-primary mt-3 me-2" onClick={handleCapitalizeClick}>Capitalize Words</button>
+        <button className="btn btn-outline-primary mt-3 me-2" onClick={handleSentenceCaseClick}>Sentence Case</button>
+        <button className="btn btn-outline-primary mt-3 me-2" onClick={handleRemoveSpacesClick}>Remove Extra Spaces</button>
+        <button className="btn btn-outline-danger mt-3" onClick={handleClearClick}>Clear Text</button>
 
         </div>
     </div>
