@@ -14,12 +14,12 @@ export default function Navbar(props) {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/">{props.homeText}</Link>
+          <Link className="nav-link active" aria-current="page" to="/tools">{props.homeText}</Link>
         </li>
         <li className="nav-item dropdown">
           <Link className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tools</Link>
           <ul className="dropdown-menu">
-            <li><Link className="dropdown-item" to="/wordnest">WordNest (Doc Maker)</Link></li>
+            <li><Link className="dropdown-item" to="/tools/wordnest">WordNest (Doc Maker)</Link></li>
             <li><Link className="dropdown-item" to="#">JPG Compressor (Coming Soon)</Link></li>
             <li><Link className="dropdown-item" to="#">Multi-line to In-line Convertor (Coming Soon)</Link></li>
             <li><hr className="dropdown-divider"/></li>

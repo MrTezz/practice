@@ -11,10 +11,10 @@ function App() {
     <Router>
         <Navbar homeText="Go To Base" aboutText="Contact"/>
       <Switch>
-        <Route exact path='/'>
+        <Route exact path='/tools'>
           <Home/>
         </Route>
-        <Route exact path='/wordnest'>
+        <Route exact path='/tools/wordnest'>
           <Textform/>
         </Route>
       </Switch>
